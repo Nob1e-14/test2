@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SucursalesController;
 use App\Http\Controllers\CakeController;
 use App\Http\Controllers\TypeController;
 
@@ -18,6 +19,20 @@ use App\Http\Controllers\TypeController;
 /*Route::get('/', function () {
     return view('welcome');
 });*/
+
+
+Route::get('/',[SucursalesController::class,'principal'])->name('principal');
+Route::get('altasucursal',[SucursalesController::class,'altasucursal'])->name('altasucursal');
+Route::post('guardarsucursal',[SucursalesController::class,'guardarsucursal'])->name('guardarsucursal');
+Route::get('reportesucursales',[SucursalesController::class,'reportesucursales'])->name('reportesucursales');
+Route::get('desactivasucursal/{id_s}',[SucursalesController::class,'desactivasucursal'])->name('desactivasucursal');
+Route::get('activarsucursal/{id_s}',[SucursalesController::class,'activarsucursal'])->name('activarsucursal');
+Route::get('borrasucursal/{id_s}',[SucursalesController::class,'borrasucursal'])->name('borrasucursal');
+Route::get('modificasucursal/{id_s}',[SucursalesController::class,'modificasucursal'])->name('modificasucursal');
+
+
+Route::post('guardacambios',[SucursalesController::class,'guardacambios'])->name('guardacambios');
+
 
 //----->Pasteles
 
